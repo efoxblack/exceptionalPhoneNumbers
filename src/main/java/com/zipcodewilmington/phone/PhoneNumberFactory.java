@@ -28,7 +28,7 @@ public final class PhoneNumberFactory {
      * @return an instance of PhoneNumber with randomly generated phone number value
      */ //TODO - Implement logic
     public static PhoneNumber createRandomPhoneNumber() {
-        return createPhoneNumberSafely(RandomNumberFactory.createInteger((int) Math.random(), (int) Math.random()), RandomNumberFactory.createInteger((int) Math.random(), (int) Math.random()), RandomNumberFactory.createInteger((int) Math.random(), (int) Math.random()));
+        return createPhoneNumberSafely(RandomNumberFactory.createInteger(100, 999), RandomNumberFactory.createInteger(100, 999), RandomNumberFactory.createInteger(1000, 9999));
     }
 
 
