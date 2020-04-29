@@ -39,11 +39,11 @@ public final class PhoneNumberFactory {
      * @return a new phone number object
      */ //TODO - if input is valid, return respective PhoneNumber object, else return null
     public static PhoneNumber createPhoneNumberSafely(int areaCode, int centralOfficeCode, int phoneLineCode){
+        String pN = "(" + areaCode + ")" + "-" + centralOfficeCode + "-" + phoneLineCode;
         try{
-            String phoneNum = "(" + String.valueOf(areaCode) + ")" + "-" + String.valueOf(centralOfficeCode) + "-" + String.valueOf(phoneLineCode);
-            logger.info(phoneNum + " is not a valid phone number");
-            return createPhoneNumber(phoneNum);
+            return createPhoneNumber(pN);
         }catch (InvalidPhoneNumberFormatException e) {
+            logger.info(pN + " is not a valid phone number");
             return null;
         }
     }
